@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f0fbfd;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+button.ghost {
+  background-color: transparent;
+  border-color: #ffffff;
+}
+input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  outline: none;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+.container {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  .form-container {
+    background: #f0fbfd;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+  }
+  .sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 1;
+    z-index: 2;
+    transition: all 0.6s ease-in-out;
+  }
+  .sign-in-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+    transition: all 0.6s ease-in-out;
+  }
+}
+.container.active .sign-up-container {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.container.active .sign-in-container {
+  opacity: 1;
+  transform: translateX(100%);
+  z-index: 5;
+  animation: show 0.6s;
+}
+.overlay {
+  background: #023e8a;
+  background: -webkit-linear-gradient(to right, #023e8a, #023e8a);
+  background: linear-gradient(to right, #023e8a, #023e8a);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #ffffff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.container.active .overlay {
+  transform: translateX(50%);
+}
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+.left {
+  right: 0;
+}
+.right {
+  left: 0;
+}
+@keyframes show {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  z-index: 100;
+  .main-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .moleskine-notebook {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      perspective: 800px;
+      .notebook-cover {
+        background: #023e8a;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 10;
+        transition: 0.5s linear;
+        transform-style: preserve-3d;
+        transform-origin: left center 0px;
+        &:before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: calc(100% + 2px);
+          top: -1px;
+          z-index: 100;
+          border-radius: 2px;
+          right: 25px;
+          transition: 2s ease;
+          background: black;
+        }
+        .notebook-skin {
+          height: 50px;
+          background: #e8e8e0;
+          margin-top: 80px;
+          padding: 15px;
+          font-size: 12px;
+          position: relative;
+          z-index: 10;
+          color: #222;
+          text-align: left;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+          &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 15px;
+            left: 0;
+            bottom: 0;
+            background: #00b4d8;
+          }
+        }
+      }
+      .notebook-page {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-color: #fbfae8;
+        z-index: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}
+.container.active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.container.active .overlay {
+  transform: translateX(50%);
+}
