@@ -56,7 +56,7 @@ export default function Register() {
             </a>
             <Button
               variant="outline"
-              className="rounded-xl px-10 bg-[#023e8a] text-white">
+              className="rounded-xl px-10 bg-[#164863] text-white">
               SIGN IN
             </Button>
           </form>
@@ -94,7 +94,7 @@ export default function Register() {
             <p className="text-red-500">{errors.password?.message}</p>
             <Button
               variant="outline"
-              className="rounded-xl px-10 bg-[#023e8a] text-white">
+              className="rounded-xl px-10 bg-[#164863] text-white">
               SIGN UP
             </Button>
           </form>

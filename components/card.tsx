@@ -4,7 +4,7 @@ import img from "../public/LEVEL_Photocard_Sung_Jinwoo_EN.png";
 export default function Card() {
   return (
     <>
-      <div className="min-h-[335px]">
+      <div className="">
         <div className="w-40">
           <Image
             alt={"gg"}

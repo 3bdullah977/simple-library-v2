@@ -1,5 +1,3 @@
-import Nav from "./nav";
-import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
@@ -15,7 +13,6 @@ export default function Welcome() {
   return (
     <>
       <main className="welcome">
-        <Nav />
         <section className="h-[90vh] px-16 flex flex-col justify-center">
           <div className="w-2/4 flex flex-col gap-5 items-start">
             <h2 className="text-6xl font-medium">
@@ -35,7 +32,7 @@ export default function Welcome() {
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle>Search</DialogTitle>
-                  <DialogDescription className="flex items-center shadow-none">
+                  <DialogDescription className="flex items-center gap-2">
                     <Search width={20} height={20} />
                     <Input placeholder="Search..." />
                   </DialogDescription>
