@@ -26,7 +26,7 @@ export default function Register() {
 
   return (
     <>
-      <div className={`container rounded-lg ${toggle && "active"}`}>
+      <div className={`container rounded-lg ${toggle && "active"} `}>
         <div className="form-container sign-in-container">
           <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <h1 className="font-extrabold text-3xl">Sign in</h1>
