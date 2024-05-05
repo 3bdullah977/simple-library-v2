@@ -16,7 +16,7 @@ export default function Welcome() {
         <section className="h-[90vh] px-16 flex flex-col justify-center">
           <div className="w-2/4 flex flex-col gap-5 items-start">
             <h2 className="text-6xl font-medium">
-              Where ever page <br /> is a new adventure
+              Where every page <br /> is a new adventure
             </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
