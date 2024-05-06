@@ -19,10 +19,11 @@ export default function Welcome() {
               Where every page <br /> is a new adventure
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-              aliquam sequi quo culpa unde molestiae vero laudantium veritatis?
-              Nemo sapiente officia sed maxime voluptates debitis atque
-              temporibus at quos eos!
+              Hello and welcome to our library shop! We're thrilled to have you
+              here. Our mission is to provide you with a wide range of books and
+              educational materials to enrich your learning experience. Whether
+              you're looking for the latest bestsellers, classic literature, or
+              educational resources, we've got you covered.
             </p>
             <Dialog>
               <DialogTrigger className="bg-transparent rounded-2xl border-black flex items-center border-[1.5px] py-1 gap-1 px-10">
